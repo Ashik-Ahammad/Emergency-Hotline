@@ -119,6 +119,7 @@ document
 document.getElementById("copy-btn-1").addEventListener("click", function () {
     const cardNumber = document.getElementById("first-card-num")
     navigator.clipboard.writeText(cardNumber.innerText)
+    alert("Emergency number copied to clipboard")
 
     const copyCount = document.getElementById("copy-count")
     let currCopyCount = parseInt(copyCount.innerText)
@@ -127,6 +128,7 @@ document.getElementById("copy-btn-1").addEventListener("click", function () {
 document.getElementById("copy-btn-2").addEventListener("click", function () {
     const cardNumber = document.getElementById("second-card-num")
     navigator.clipboard.writeText(cardNumber.innerText)
+    alert("Emergency number copied to clipboard")
 
     const copyCount = document.getElementById("copy-count")
     let currCopyCount = parseInt(copyCount.innerText)
@@ -135,6 +137,7 @@ document.getElementById("copy-btn-2").addEventListener("click", function () {
 document.getElementById("copy-btn-3").addEventListener("click", function () {
     const cardNumber = document.getElementById("third-card-num")
     navigator.clipboard.writeText(cardNumber.innerText)
+    alert("Emergency number copied to clipboard")
 
     const copyCount = document.getElementById("copy-count")
     let currCopyCount = parseInt(copyCount.innerText)
@@ -143,6 +146,7 @@ document.getElementById("copy-btn-3").addEventListener("click", function () {
 document.getElementById("copy-btn-4").addEventListener("click", function () {
     const cardNumber = document.getElementById("fourth-card-num")
     navigator.clipboard.writeText(cardNumber.innerText)
+    alert("Emergency number copied to clipboard")
 
     const copyCount = document.getElementById("copy-count")
     let currCopyCount = parseInt(copyCount.innerText)
@@ -151,6 +155,7 @@ document.getElementById("copy-btn-4").addEventListener("click", function () {
 document.getElementById("copy-btn-5").addEventListener("click", function () {
     const cardNumber = document.getElementById("fifth-card-num")
     navigator.clipboard.writeText(cardNumber.innerText)
+    alert("Emergency number copied to clipboard")
 
     const copyCount = document.getElementById("copy-count")
     let currCopyCount = parseInt(copyCount.innerText)
@@ -159,6 +164,7 @@ document.getElementById("copy-btn-5").addEventListener("click", function () {
 document.getElementById("copy-btn-6").addEventListener("click", function () {
     const cardNumber = document.getElementById("sixth-card-num")
     navigator.clipboard.writeText(cardNumber.innerText)
+    alert("Emergency number copied to clipboard")
 
     const copyCount = document.getElementById("copy-count")
     let currCopyCount = parseInt(copyCount.innerText)
