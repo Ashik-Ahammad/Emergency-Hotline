@@ -164,3 +164,18 @@ document.getElementById("copy-btn-6").addEventListener("click", function () {
     let currCopyCount = parseInt(copyCount.innerText)
     copyCount.innerText = currCopyCount + 1;
 });
+
+//////////////////////////////////////////////////////////////
+//-------------------+++++Clear Button+++++-------------------
+
+document.getElementById("clear-btn").addEventListener("click", function() {
+  alert("Are you sure want delete all call history?")
+  const callHistoryTitle = document.getElementById("call-history-type");
+    callHistoryTitle.innerText = "";
+
+    const callHistoryNumber = document.getElementById("call-history-number");
+    callHistoryNumber.innerText = "";
+
+    const callHistoryDate = document.getElementById("call-history-date");
+    callHistoryDate.innerText = "";
+})
