@@ -39,22 +39,22 @@ document
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 function callButtonAlerts(id1, id2, id3) {
-  // **********************Alert*******************
-  const cardDetail = document.getElementById(id1).innerText;
-  const cardNumber = document.getElementById(id2).innerText;
-  alert(`Calling ${cardDetail} ${cardNumber}`);
-
   // **********************Coin Deduction*******************
   let coinElement = document.getElementById("coin-initial-value");
   let coinInitialVal = parseInt(coinElement.innerText);
 
-  if (coinInitialVal >= 20) {
-    let deductVal = coinInitialVal - 20;
-    coinElement.innerText = deductVal;
-  } else {
+  if (coinInitialVal < 20) {
     alert("Not enough coins to make this call!");
     return;
   }
+
+  // Deduct coins
+  coinElement.innerText = coinInitialVal - 20;
+
+  // **********************Alert*******************
+  const cardDetail = document.getElementById(id1).innerText;
+  const cardNumber = document.getElementById(id2).innerText;
+  alert(`Calling ${cardDetail} ${cardNumber}`);
 
   // ************--------**********+++++Call History++++***********-------------*******
   const getCallTitle = document.getElementById(id3).innerText;
@@ -85,6 +85,7 @@ function callButtonAlerts(id1, id2, id3) {
   // Append to history list
   document.getElementById("call-history-list").prepend(li);
 }
+
 
 // Calling-btn click events
 document
