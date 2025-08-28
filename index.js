@@ -53,135 +53,143 @@ function callButtonAlerts(id1, id2, id3) {
     coinElement.innerText = deductVal;
   } else {
     alert("Not enough coins to make this call!");
+    return;
   }
 
-  // **********************Call History*******************
-  //-------***------get call history-------***-------
-    const getCallTitle = document.getElementById(id3);
-    let getCallTitleText = getCallTitle.innerText;
+  // ************--------**********+++++Call History++++***********-------------*******
+  const getCallTitle = document.getElementById(id3).innerText;
+  const getCallTitleNum = document.getElementById(id2).innerText;
 
-    const getCallTitleNum = document.getElementById(id2);
-    let getCallTitleNumber = getCallTitleNum.innerText;
+  // Create new li
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <div class="bg-[#FAFAFA] p-3 sm:p-4 rounded-lg shadow-md">
+      <div class="flex justify-between items-start mb-1">
+        <h2 class="text-base sm:text-lg font-medium text-gray-800">
+          ${getCallTitle}
+        </h2>
+        <span class="text-xs sm:text-sm text-gray-500">${new Date().toLocaleTimeString(
+          [],
+          {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true,
+          }
+        )}</span>
+      </div>
+      <p class="text-lg sm:text-xl font-bold text-gray-600">${getCallTitleNum}</p>
+    </div>
+  `;
 
-    //--------***-------set call history------***----------
-    const callHistoryTitle = document.getElementById("call-history-type");
-    callHistoryTitle.innerText = getCallTitleText;
-
-    const callHistoryNumber = document.getElementById("call-history-number");
-    callHistoryNumber.innerText = getCallTitleNumber;
-
-    const callHistoryDate = document.getElementById("call-history-date");
-    let now = new Date();
-    let time = now.toLocaleTimeString();
-    callHistoryDate.innerText = time;
-
+  // Append to history list
+  document.getElementById("call-history-list").prepend(li);
 }
 
 // Calling-btn click events
 document
   .getElementById("nEmergency-call-btn")
   .addEventListener("click", function () {
-    callButtonAlerts("first-card-details", "first-card-num", "first-card-title");
+    callButtonAlerts(
+      "first-card-details",
+      "first-card-num",
+      "first-card-title"
+    );
   });
 
 document
   .getElementById("police-call-btn")
   .addEventListener("click", function () {
-    callButtonAlerts("second-card-details", "second-card-num", "second-card-title");
+    callButtonAlerts(
+      "second-card-details",
+      "second-card-num",
+      "second-card-title"
+    );
   });
 
 document
   .getElementById("fireS-call-btn")
   .addEventListener("click", function () {
-    callButtonAlerts("third-card-details", "third-card-num", "third-card-title");
+    callButtonAlerts(
+      "third-card-details",
+      "third-card-num",
+      "third-card-title"
+    );
   });
 
 document
   .getElementById("ambulance-call-btn")
   .addEventListener("click", function () {
-    callButtonAlerts("fourth-card-details", "fourth-card-num", "fourth-card-title");
+    callButtonAlerts(
+      "fourth-card-details",
+      "fourth-card-num",
+      "fourth-card-title"
+    );
   });
 
 document
   .getElementById("electric-call-btn")
   .addEventListener("click", function () {
-    callButtonAlerts("fifth-card-details", "fifth-card-num", "fifth-card-title");
+    callButtonAlerts(
+      "fifth-card-details",
+      "fifth-card-num",
+      "fifth-card-title"
+    );
   });
 
-document
-  .getElementById("rail-call-btn")
-  .addEventListener("click", function () {
+document.getElementById("rail-call-btn").addEventListener("click", function () {
   callButtonAlerts("sixth-card-details", "sixth-card-num", "sixth-card-title");
 });
 
 //////////////////////////////////////////////////////////////
 //-----------------=======Copy Button=====--------------------
+function copyNumber(cardNumId, countId = "copy-count") {
+  const cardNumber = document.getElementById(cardNumId).innerText;
+  navigator.clipboard.writeText(cardNumber);
+  alert("Emergency number copied to clipboard");
+
+  const copyCount = document.getElementById(countId);
+  let currCopyCount = parseInt(copyCount.innerText);
+  copyCount.innerText = currCopyCount + 1;
+}
+
+// Copy btn click events
 document.getElementById("copy-btn-1").addEventListener("click", function () {
-    const cardNumber = document.getElementById("first-card-num")
-    navigator.clipboard.writeText(cardNumber.innerText)
-    alert("Emergency number copied to clipboard")
-
-    const copyCount = document.getElementById("copy-count")
-    let currCopyCount = parseInt(copyCount.innerText)
-    copyCount.innerText = currCopyCount + 1;
+  copyNumber("first-card-num");
 });
+
 document.getElementById("copy-btn-2").addEventListener("click", function () {
-    const cardNumber = document.getElementById("second-card-num")
-    navigator.clipboard.writeText(cardNumber.innerText)
-    alert("Emergency number copied to clipboard")
-
-    const copyCount = document.getElementById("copy-count")
-    let currCopyCount = parseInt(copyCount.innerText)
-    copyCount.innerText = currCopyCount + 1;
+  copyNumber("second-card-num");
 });
+
 document.getElementById("copy-btn-3").addEventListener("click", function () {
-    const cardNumber = document.getElementById("third-card-num")
-    navigator.clipboard.writeText(cardNumber.innerText)
-    alert("Emergency number copied to clipboard")
-
-    const copyCount = document.getElementById("copy-count")
-    let currCopyCount = parseInt(copyCount.innerText)
-    copyCount.innerText = currCopyCount + 1;
+  copyNumber("third-card-num");
 });
+
 document.getElementById("copy-btn-4").addEventListener("click", function () {
-    const cardNumber = document.getElementById("fourth-card-num")
-    navigator.clipboard.writeText(cardNumber.innerText)
-    alert("Emergency number copied to clipboard")
-
-    const copyCount = document.getElementById("copy-count")
-    let currCopyCount = parseInt(copyCount.innerText)
-    copyCount.innerText = currCopyCount + 1;
+  copyNumber("fourth-card-num");
 });
+
 document.getElementById("copy-btn-5").addEventListener("click", function () {
-    const cardNumber = document.getElementById("fifth-card-num")
-    navigator.clipboard.writeText(cardNumber.innerText)
-    alert("Emergency number copied to clipboard")
-
-    const copyCount = document.getElementById("copy-count")
-    let currCopyCount = parseInt(copyCount.innerText)
-    copyCount.innerText = currCopyCount + 1;
+  copyNumber("fifth-card-num");
 });
-document.getElementById("copy-btn-6").addEventListener("click", function () {
-    const cardNumber = document.getElementById("sixth-card-num")
-    navigator.clipboard.writeText(cardNumber.innerText)
-    alert("Emergency number copied to clipboard")
 
-    const copyCount = document.getElementById("copy-count")
-    let currCopyCount = parseInt(copyCount.innerText)
-    copyCount.innerText = currCopyCount + 1;
+document.getElementById("copy-btn-6").addEventListener("click", function () {
+  copyNumber("sixth-card-num");
 });
 
 //////////////////////////////////////////////////////////////
 //-------------------+++++Clear Button+++++-------------------
 
-document.getElementById("clear-btn").addEventListener("click", function() {
-  alert("Are you sure want delete all call history?")
-  const callHistoryTitle = document.getElementById("call-history-type");
-    callHistoryTitle.innerText = "";
+document.getElementById("clear-btn").addEventListener("click", function () {
+  const callHistoryList = document.getElementById("call-history-list");
 
-    const callHistoryNumber = document.getElementById("call-history-number");
-    callHistoryNumber.innerText = "";
+  if (callHistoryList.children.length === 0) {
+    alert("Call history is already empty!");
+    return;
+  }
 
-    const callHistoryDate = document.getElementById("call-history-date");
-    callHistoryDate.innerText = "";
-})
+  if (confirm("Are you sure you want to delete all call history?")) {
+    callHistoryList.innerHTML = "";
+  }
+});

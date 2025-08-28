@@ -2,10 +2,10 @@
 
 **1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?**
 
-* `getElementById("id")` → Picks only one element by its ID (because IDs are unique).
-* `getElementsByClassName("class")` → Selects all elements that have a specific className.
-* `querySelector("css-selector")` → Selects the first element that matches a specified CSS selector.
-* `querySelectorAll("css-selector")` → Selects all elements that match a specified CSS selector.
+getElementById("id") → Picks only one element by its ID (because IDs are unique).
+getElementsByClassName("class") → Selects all elements that have a specific className.
+querySelector("css-selector") → Selects the first element that matches a specified CSS selector.
+querySelectorAll("css-selector") → Selects all elements that match a specified CSS selector.
 
 ---
 
@@ -36,5 +36,5 @@ Example: put one click event on `ul` instead of putting many events on all `li`.
 
 **5. What is the difference between preventDefault() and stopPropagation() methods?**
 
-* `preventDefault()` → Stops the browser’s normal work (like stopping a link from opening a new page).
-* `stopPropagation()` → Stops the event from moving up to parent elements.
+preventDefault() → Stops the browser’s normal work (like stopping a link from opening a new page).
+stopPropagation() → Stops the event from moving up to parent elements.
